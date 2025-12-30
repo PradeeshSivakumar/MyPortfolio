@@ -1,16 +1,73 @@
-# React + Vite
+<h1 align="center">Hi 👋, I'm Pradeesh Sivakumar</h1>
+<h3 align="center">Computer Science & Engineering Student | Full Stack & AI Developer</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="mailto:spradeesh8233@gmail.com">📧 Email</a> •
+  <a href="https://www.linkedin.com/in/pradeesh-sivakumar-229191327/">💼 LinkedIn</a> •
+  <a href="https://github.com/PradeeshSivakumar">🐙 GitHub</a>
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👨‍💻 About Me
 
-## React Compiler
+I’m a **Computer Science and Engineering undergraduate (2024–2028)** at **Chennai Institute of Technology**, passionate about building **real-world software solutions** using modern technologies.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I enjoy working across the stack — from **clean UI and scalable backend systems** to **AI-driven decision engines and blockchain-based transparency platforms**. I focus on writing maintainable code and turning ideas into deployable products.
 
-## Expanding the ESLint configuration
+- 🎓 CGPA: **8.56**
+- 💡 Interested in **AI, Full-Stack Development, Blockchain, and Cloud**
+- 🚀 Always learning by building projects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+### 💻 Programming Languages
+- C, C++, Java, Python, JavaScript
+
+### 🌐 Web & App Development
+- React.js, HTML5, CSS3
+- Node.js, Express.js
+- Firebase (Auth, Firestore, Storage)
+
+### 🤖 AI & Data
+- Machine Learning (Scikit-learn)
+- NLP & Chatbots
+- Data preprocessing & model evaluation
+
+### 🔗 Blockchain & Web3
+- Ethereum (Testnets)
+- Smart Contracts (Solidity basics)
+- IPFS
+
+### ☁️ Tools & Platforms
+- Git & GitHub
+- VS Code
+- Vercel, Netlify
+- Postman
+
+---
+2
+## 📈 What I’m Working On
+- Improving AI modules for real-world datasets
+- Building scalable full-stack applications
+- Exploring Web3 + AI integrations
+
+---
+
+## 🤝 Let’s Connect
+
+I’m open to:
+- 💼 Internships & project collaborations
+- 🤖 AI & full-stack development opportunities
+- 📚 Learning and building together
+
+📧 **Email:** spradeesh8233@gmail.com  
+💼 **LinkedIn:** https://www.linkedin.com/in/pradeesh-sivakumar-229191327/
+
+---
+
+<p align="center">
+  <i>“Build projects. Break things. Learn fast.”</i>
+</p>
