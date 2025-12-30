@@ -1,29 +1,40 @@
-
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../data/personal';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const form = useRef();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState(null); // 'success' | 'error' | null
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setStatus(null);
 
-        // Simulate API call
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setStatus('success');
-            setFormData({ name: '', email: '', message: '' });
-            setTimeout(() => setStatus(null), 3000);
-        }, 1500);
+        // REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
+        // Sign up at https://www.emailjs.com/
+        const SERVICE_ID = 'service_02bv9k9'; // Updated from user input
+        const TEMPLATE_ID = 'template_d03igxo'; // Updated from user input
+        const PUBLIC_KEY = 'UXlFj7v-FNBIP-OJc'; // Updated from user input
+
+        if (SERVICE_ID === 'service_id' && process.env.NODE_ENV === 'development') {
+            console.warn('EmailJS keys are missing. Please configure them in Contact.jsx');
+        }
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+                setStatus('success');
+                setIsSubmitting(false);
+                e.target.reset();
+            }, (error) => {
+                console.log(error.text);
+                setStatus('error');
+                setIsSubmitting(false);
+            });
     };
 
     return (
@@ -102,15 +113,13 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 className="glass-card p-8"
             >
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={form} onSubmit={sendEmail} className="space-y-6">
                     <div>
                         <label className="block text-sm font-medium text-white/70 mb-2">Name</label>
                         <input
                             type="text"
-                            name="name"
+                            name="user_name"
                             required
-                            value={formData.name}
-                            onChange={handleChange}
                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-pink-500 focus:bg-white/10 transition-all"
                             placeholder="Your Name"
                         />
@@ -120,10 +129,8 @@ const Contact = () => {
                         <label className="block text-sm font-medium text-white/70 mb-2">Email</label>
                         <input
                             type="email"
-                            name="email"
+                            name="user_email"
                             required
-                            value={formData.email}
-                            onChange={handleChange}
                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-pink-500 focus:bg-white/10 transition-all"
                             placeholder="your@email.com"
                         />
@@ -134,8 +141,6 @@ const Contact = () => {
                         <textarea
                             name="message"
                             required
-                            value={formData.message}
-                            onChange={handleChange}
                             rows={4}
                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-pink-500 focus:bg-white/10 transition-all resize-none"
                             placeholder="Tell me about your project..."
@@ -157,7 +162,18 @@ const Contact = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-sm text-center"
                         >
-                            Message sent successfully! I'll get back to you soon.
+                            Message sent successfully!
+                        </motion.div>
+                    )}
+
+                    {status === 'error' && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-sm text-center flex items-center justify-center gap-2"
+                        >
+                            <AlertCircle size={16} />
+                            Failed to send. Please check the console or try again later.
                         </motion.div>
                     )}
                 </form>

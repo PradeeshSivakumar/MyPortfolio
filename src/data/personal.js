@@ -1,6 +1,8 @@
 
 export const personalInfo = {
     name: "Pradeesh Sivakumar",
+    profileImage: "/Pradeesh-Sivakumar.jpeg",
+    resume: "/Pradeesh_Sivakumar_Resume.pdf",
     role: "Computer Science & Engineering Student",
     roles: ["CSE Student", "Full Stack Developer", "AI & Blockchain Enthusiast"],
     tagline: "Passionate about building scalable web, AI, and blockchain solutions that solve real-world problems.",
@@ -11,7 +13,7 @@ export const personalInfo = {
     year: "2024–2028",
     location: "Chennai, India",
     social: {
-        github: "https://github.com/your-github-username",
+        github: "https://github.com/PradeeshSivakumar",
         linkedin: "https://www.linkedin.com/in/pradeesh-sivakumar-229191327",
         email: "mailto:spradeesh8233@gmail.com"
     },
